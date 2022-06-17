@@ -27,7 +27,6 @@ INSTALLED_APPS = [
     'reviews.apps.ReviewsConfig',
     'django.db.models',
     'rest_framework',
-    'rest_framework_simplejwt',
     'django_filters',
 ]
 
