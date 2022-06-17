@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'reviews.apps.ReviewsConfig',
     'django.db.models',
     'rest_framework',
+    'rest_framework_simplejwt',
     'django_filters',
 ]
 
@@ -119,10 +120,6 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticatedOrReadOnly',
     ],
-
-    # 'DEFAULT_AUTHENTICATION_CLASSES': [
-    #     'reviews.backends.JWTAuthentication',
-    # ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
