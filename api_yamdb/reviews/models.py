@@ -4,11 +4,15 @@ from django.db import models
 
 from .validator import no_future
 
-CHOICES = (
-    ('user', 'Пользователь'),
-    ('moderator', 'Модератор'),
-    ('admin', 'Администратор'),
-)
+ADMIN = 'admin'
+MODERATOR = 'moderator'
+USER = 'user'
+
+CHOICES = [
+    (ADMIN, 'Administrator'),
+    (MODERATOR, 'Moderator'),
+    (USER, 'User'),
+]
 
 
 class User(AbstractUser):
@@ -19,7 +23,7 @@ class User(AbstractUser):
     role = models.CharField(
         max_length=16,
         choices=CHOICES,
-        default='user',
+        default=USER,
         verbose_name='Тип пользователя'
     )
     bio = models.TextField(
